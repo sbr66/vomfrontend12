@@ -79,3 +79,25 @@ div.image{
     background-size: contain;
 }
 
+
+.radius{
+    width: 200px;
+    height: 200px;
+    border: 5px solid red;
+    margin: 100px auto;
+    _border-radius: 20px 30px 40px 50px;
+    _border-radius: 105px;
+    border-radius: 50%;
+
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e3f0c+1,7be5d9+100 */
+background: #1e3f0c; /* Old browsers */
+background: -moz-linear-gradient(left,  #1e3f0c 1%, #7be5d9 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  #1e3f0c 1%,#7be5d9 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  #1e3f0c 1%,#7be5d9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e3f0c', endColorstr='#7be5d9',GradientType=1 ); /* IE6-9 */
+
+}
+
+body{
+    height: 4000px;
+}
