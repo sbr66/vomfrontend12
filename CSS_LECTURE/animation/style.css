@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+div.outer{
+    width: 400px;
+    height: 400px;
+    border: 1px solid;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.inner{
+    width: 200px;
+    height: 200px;
+    background: yellow;
+    _animation-name: change-element;
+    _animation-duration: 1s;
+    _animation-delay: 1s;
+    animation-fill-mode: forwards;
+    _animation-iteration-count: 3;
+    _animation-direction: alternate;
+    _animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation: change-element 1s 3 cubic-bezier(0.075, 0.82, 0.165, 1) alternate;
+}
+
+@keyframes change-element {
+    0% {
+        width: 200px;
+        height: 200px;
+        background: yellow;  
+    }
+    100%{
+        width: 400px;
+        height: 400px;
+        background: red;
+    }  
+}
+
+div.ham{
+    width: 100px;
+    height: 100px;
+    background: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+i.fa-solid{
+    font-size: 30px;
+    color: white;
+    opacity: 0.6;
+    /* opacity는 투명도이며, 값이 0에 가까울수록 투명도는 높아진다. */
+    animation: scale 0.5s infinite alternate;
+}
+
+/* 1.keyframes 정의
+2.속성 정리 */
+
+@keyframes scale {
+    
+}
