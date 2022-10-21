@@ -1,9 +1,8 @@
 
-
 .container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: minmax(100px, auto);
+    grid-auto-rows: minmax(100px,auto);
     gap: .5rem;
     grid-template-areas: 
     "a b c"
@@ -17,18 +16,41 @@
     background: #5b9072;
     overflow: hidden;
     position: relative;
+    display: flex;
 }
 
-.item img{
+.item:nth-child(1) img{
     width: 100%;
+    transition: all 0.4s ease;
 }
-.span{
+
+.click{
+    width: 100%;
+    height: 100%;
     position: absolute;
- 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#d4d4d4;
+    font-size: 50px;
+    background: #a6c3cf;
+    opacity: 0;
+    z-index: 1;
+    transition: all 0.4s ease;
 }
+
+
+.item:nth-child(1):hover>.click{
+    opacity: 0.8;
+}
+.item:nth-child(1):hover>img{
+    transform: scale(1.2);
+}
+
 .item:nth-child(1){grid-area: a;}
 .item:nth-child(2){grid-area: b;}
 .item:nth-child(3){grid-area: c;}
 .item:nth-child(4){grid-area: d;}
 .item:nth-child(5){grid-area: f;}
+_.item:nth-child(5)>img{width: 100%;};
 .item:nth-child(6){}
