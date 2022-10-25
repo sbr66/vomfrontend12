@@ -5,6 +5,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 ol,
 ul {
@@ -18,6 +19,7 @@ a {
 img {
   border: 0;
 }
+html,
 body {
   font: 12px/1.6 "Poiret One";
   color: #555;
@@ -32,10 +34,61 @@ header {
   position: fixed;
   width: 15%;
   height: 100%;
-  background: #888;
+  background: #fff;
   top: 0;
   left: 0;
   transition: all 0.5s ease;
+}
+/* ============Logo Style============= */
+header h1 {
+  width: 180px;
+  height: 136px;
+  background: url(../img/logo1.png) no-repeat 0 0;
+  background-size: contain;
+  _background-repeat: no-repeat;
+  _background-position: 0 0;
+  text-indent: -9999px;
+  /* text-indent: 들여쓰기 => 음수 값이면 화면 좌측, 양수 값이면 화면 우측으로 들여쓴다 */
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  margin-left: -90px;
+}
+
+#gnb {
+  position: absolute;
+  top: 300px;
+  right: 57px;
+}
+
+#gnb a {
+  display: block;
+  font-size: 17px;
+  font-weight: bold;
+  color: #555;
+  line-height: 1.8;
+  padding: 8px 30px;
+  transition: all 0.5s ease;
+}
+
+#gnb a:hover {
+  color: skyblue;
+}
+
+.snsSet {
+  position: absolute;
+  bottom: 50px;
+  width: 90px;
+  height: 47px;
+  right: 50%;
+  margin-right: -45px;
+}
+.snsSet a {
+  float: left;
+}
+
+#gnb a i {
+  margin-right: 13px;
 }
 
 /* ============Nav Style============= */
@@ -46,8 +99,16 @@ nav {
   background: #212121;
   margin-left: 15%;
   transition: all 0.5s ease;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
 }
 
+nav > div {
+  padding-top: 2px;
+  display: flex;
+  align-items: center;
+}
 /* ============Section Style============= */
 section {
   width: 85%;
@@ -116,13 +177,34 @@ article:nth-child(12) {
   background: #222;
 }
 
-/* =========== Screen Size 1280px ~ 1599px ============= */
-@media screen and (min-width: 1280px) and (max-width: 1599px) {
+/* =========== Common Header 0px ~ 1599px ============= */
+@media screen and (max-width: 1599px) {
   /* =======header styel========= */
   header {
     position: relative;
     width: 100%;
     height: 80px;
+  }
+
+  header h1 {
+    width: 200px;
+    height: 40px;
+    background-image: url(../img/logo2.png);
+    left: 20px;
+    top: 20px;
+    margin-left: 0;
+  }
+  #gnb {
+    top: 20px;
+  }
+
+  #gnb li {
+    float: left;
+    width: 100%;
+  }
+  .snsSet {
+    bottom: 20px;
+    right: 80px;
   }
   nav {
     width: 100%;
@@ -137,22 +219,16 @@ article:nth-child(12) {
 /* =========== Screen Size 1024px ~ 1279px ============= */
 
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
-  /* ======Header style========= */
-  header {
-    position: relative;
-    width: 100%;
-    height: 80px;
-  }
-  nav {
-    width: 100%;
-    margin-left: 0;
-  }
-  section {
-    width: 100%;
-    margin-left: 0;
+  /* =======Header Box style========= */
+  #gnb {
+    right: 30px;
   }
 
-  /* =======Article style========= */
+  .snsSet {
+    display: none;
+  }
+
+  /* =======Article Box style========= */
   article {
     width: 25%;
   }
@@ -204,22 +280,20 @@ article:nth-child(12) {
 
 /* =========== Screen Size 780px ~ 1023px ============= */
 @media screen and (min-width: 780px) and (max-width: 1023px) {
-  /* =======header style========= */
-  header {
-    position: relative;
-    width: 100%;
-    height: 80px;
-  }
-  nav {
-    width: 100%;
-    margin-left: 0;
-  }
-  section {
-    width: 100%;
-    margin-left: 0;
+  /* =======Header Box style========= */
+  #gnb {
+    right: 10px;
   }
 
-  /* =======Article style========= */
+  #gnb a {
+    padding: 10px;
+  }
+
+  .snsSet {
+    display: none;
+  }
+
+  /* =======Article Box style========= */
   article {
     width: 33.33%;
   }
@@ -270,21 +344,18 @@ article:nth-child(12) {
 
 /* =========== Screen Size 640px ~ 779px ============= */
 @media screen and (min-width: 640px) and (max-width: 779px) {
-  /* =======header style========= */
-  header {
-    position: relative;
-    width: 100%;
-    height: 80px;
+  /* =======Header Box style========= */
+  #gnb {
+    right: 10px;
   }
-  nav {
-    width: 100%;
-    margin-left: 0;
+  #gnb a {
+    padding: 10px;
   }
-  section {
-    width: 100%;
-    margin-left: 0;
+  .snsSet {
+    display: none;
   }
-  /* =======Article style========= */
+
+  /* =======Article Box style========= */
   article {
     width: 50%;
   }
@@ -339,17 +410,40 @@ article:nth-child(12) {
 @media screen and (min-width: 480px) and (max-width: 639px) {
   /* =======header style========= */
   header {
-    position: relative;
-    width: 100%;
     height: 130px;
   }
+  header h1 {
+    position: relative;
+    top: 20px;
+    width: 200px;
+    height: 45px;
+    margin: auto;
+    left: 0;
+  }
+  #gnb {
+    position: relative;
+    height: 65px;
+    left: 0;
+    padding: 10px 0 0 0;
+  }
+
+  #gnb li {
+    float: left;
+    width: 25%;
+  }
+
+  #gnb a {
+    padding: 5px;
+    text-align: center;
+  }
+  .snsSet {
+    display: none;
+  }
+
   nav {
     display: none;
   }
-  section {
-    width: 100%;
-    margin-left: 0;
-  }
+
   /* =======Article style========= */
   article {
     width: 50%;
@@ -410,13 +504,46 @@ article:nth-child(12) {
     height: 40px;
     z-index: 2;
   }
+
+  header h1 {
+    width: 140px;
+    top: 20px;
+    left: 50%;
+    margin-left: -70px;
+    background-image: url(../img/logo1.png);
+    height: 136px;
+    background-size: contain;
+  }
+  #gnb {
+    width: 250px;
+    top: 140px;
+    right: 50%;
+    margin-right: -125px;
+  }
+
+  #gnb li {
+    float: 0;
+  }
+  #gnb a {
+    width: 100%;
+    background: #000;
+    opacity: 0.5;
+    margin: 8px 0;
+    border-radius: 10px;
+    color: #fff;
+  }
+  #gnb a:hover {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  .snsSet {
+    display: none;
+  }
+
   nav {
     display: none;
   }
-  section {
-    width: 100%;
-    margin-left: 0;
-  }
+
   article {
     display: none;
   }
@@ -425,5 +552,6 @@ article:nth-child(12) {
     position: fixed;
     width: 100%;
     height: 100%;
+    background: #fff;
   }
 }
