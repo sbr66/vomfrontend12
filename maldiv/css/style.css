@@ -105,10 +105,14 @@ nav {
 }
 
 nav > div {
-  padding-top: 2px;
   display: flex;
   align-items: center;
 }
+
+nav > div > a {
+  display: flex;
+}
+
 /* ============Section Style============= */
 section {
   width: 85%;
@@ -177,6 +181,127 @@ article:nth-child(12) {
   background: #222;
 }
 
+/* =========== Article Image Grid Style ============= */
+article > div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  /* 
+  cursor: 마우스를 호버링 했을때 바뀌는 커서 모양 지정. 대부분 pointer값 사용 
+  참조 : https://developer.mozilla.org/ko/docs/Web/CSS/cursor */
+}
+article > div.bg1 {
+  background-image: url(../img/pic1.jpg);
+}
+article > div.bg2 {
+  background-image: url(../img/pic2.jpg);
+}
+article > div.bg3 {
+  background-image: url(../img/pic3.jpg);
+}
+article > div.bg4 {
+  background-image: url(../img/pic4.jpg);
+}
+article > div.bg5 {
+  background-image: url(../img/pic5.jpg);
+}
+article > div.bg6 {
+  background-image: url(../img/pic6.jpg);
+}
+article > div.bg7 {
+  background-image: url(../img/pic7.jpg);
+}
+article > div.bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+article > div.bg > span {
+  font-size: 60px;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+  transform: scale(10);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+article > div.bg1 span {
+  font-size: 170px;
+  opacity: 1;
+  transform: scale(1);
+  bottom: -76px;
+  right: -6px;
+  transition: all 0.5s ease;
+}
+
+article:hover > div.bg > span {
+  transform: scale(1);
+  opacity: 1;
+}
+article:hover > div.bg1 > span {
+  color: #222;
+}
+
+/* =========== Article Text Grid Style ============= */
+article > div.txt {
+  color: #666;
+  background: #fff;
+  padding: 40px 30px;
+  transition: all 0.5s ease;
+}
+
+article:nth-child(3) > div.txt {
+  background: #bff7fa;
+}
+
+article:nth-child(11) > div.txt {
+  background: #e3f1fb;
+}
+
+article > div.txt strong {
+  font-size: 30px;
+  font-weight: normal;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 20px;
+  transition: all 0.5s ease;
+}
+
+article > div.txt i {
+  position: absolute;
+  font-size: 300px;
+  bottom: -70px;
+  color: #b2effc;
+  right: -200px;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+article:nth-child(3) > div.txt i {
+  right: 0px;
+  font-size: 200px;
+  color: #fff;
+  opacity: 0.7;
+}
+
+article:hover > div.txt {
+  background: #6ce2fb;
+  color: #fff;
+}
+
+article:hover > div.txt i {
+  right: 0;
+  opacity: 0.5;
+}
+
+article:hover > div.txt strong {
+  color: #fff;
+}
+
 /* =========== Common Header 0px ~ 1599px ============= */
 @media screen and (max-width: 1599px) {
   /* =======header styel========= */
@@ -196,11 +321,12 @@ article:nth-child(12) {
   }
   #gnb {
     top: 20px;
+    right: 200px;
   }
 
   #gnb li {
     float: left;
-    width: 100%;
+    _width: 100%;
   }
   .snsSet {
     bottom: 20px;
@@ -234,47 +360,25 @@ article:nth-child(12) {
   }
 
   article:nth-child(1) {
-    background: #aaa;
     width: 75%;
     height: 520px;
   }
   article:nth-child(2) {
-    background: #bbb;
     width: 25%;
   }
-  article:nth-child(3) {
-    background: #ccc;
-  }
-  article:nth-child(4) {
-    background: #ddd;
-  }
-  article:nth-child(5) {
-    background: #999;
-  }
+
   article:nth-child(6) {
-    background: #888;
     width: 50%;
   }
   article:nth-child(7) {
-    background: #777;
     width: 50%;
   }
-  article:nth-child(8) {
-    background: #666;
-  }
+
   article:nth-child(9) {
-    background: #555;
     width: 25%;
   }
   article:nth-child(10) {
-    background: #444;
     width: 50%;
-  }
-  article:nth-child(11) {
-    background: #333;
-  }
-  article:nth-child(12) {
-    background: #222;
   }
 }
 
@@ -299,43 +403,30 @@ article:nth-child(12) {
   }
 
   article:nth-child(1) {
-    background: #aaa;
     width: 100%;
     height: 400px;
   }
   article:nth-child(2) {
-    background: #bbb;
     width: 66.66%;
-  }
-  article:nth-child(3) {
-    background: #ccc;
   }
   article:nth-child(4) {
     display: none;
   }
-  article:nth-child(5) {
-    background: #999;
-  }
+
   article:nth-child(6) {
-    background: #888;
     width: 66.66%;
   }
   article:nth-child(7) {
     display: none;
   }
   article:nth-child(8) {
-    background: #666;
     width: 33.33%;
   }
   article:nth-child(9) {
-    background: #555;
     width: 33.33%;
   }
   article:nth-child(10) {
     display: none;
-  }
-  article:nth-child(11) {
-    background: #333;
   }
   article:nth-child(12) {
     display: none;
@@ -360,7 +451,6 @@ article:nth-child(12) {
     width: 50%;
   }
   article:nth-child(1) {
-    background: #aaa;
     width: 100%;
     height: 400px;
   }
@@ -369,39 +459,30 @@ article:nth-child(12) {
     width: 100%;
   }
   article:nth-child(3) {
-    background: #ccc;
     display: none;
   }
   article:nth-child(4) {
     display: none;
   }
   article:nth-child(5) {
-    background: #999;
     width: 50%;
   }
   article:nth-child(6) {
-    background: #888;
     width: 50%;
   }
   article:nth-child(7) {
     display: none;
   }
   article:nth-child(8) {
-    background: #666;
     width: 50%;
   }
   article:nth-child(9) {
-    background: #555;
     width: 50%;
   }
   article:nth-child(10) {
     display: none;
   }
-  article:nth-child(11) {
-    background: #333;
-  }
   article:nth-child(12) {
-    background: #222;
     width: 50%;
   }
 }
@@ -450,50 +531,53 @@ article:nth-child(12) {
     height: 150px;
   }
   article:nth-child(1) {
-    background: #aaa;
     width: 100%;
     height: 300px;
   }
   article:nth-child(2) {
-    background: #bbb;
     width: 100%;
   }
   article:nth-child(3) {
-    background: #ccc;
     display: none;
   }
   article:nth-child(4) {
     display: none;
   }
   article:nth-child(5) {
-    background: #999;
     width: 50%;
   }
   article:nth-child(6) {
-    background: #888;
     width: 50%;
   }
   article:nth-child(7) {
     display: none;
   }
   article:nth-child(8) {
-    background: #666;
     width: 50%;
   }
   article:nth-child(9) {
-    background: #555;
     width: 50%;
   }
   article:nth-child(10) {
     display: none;
   }
-  article:nth-child(11) {
-    background: #333;
-  }
+
   article:nth-child(12) {
-    background: #222;
     width: 50%;
   }
+}
+
+article > div.bg1 span {
+  font-size: 120px;
+  bottom: -50px;
+}
+
+article > div.txt strong {
+  font-size: 25px;
+}
+
+article > div.txt em {
+  display: none;
 }
 
 /* =========== Screen Size 0px ~ 479px ============= */
@@ -501,7 +585,7 @@ article:nth-child(12) {
   header {
     position: fixed;
     width: 100%;
-    height: 40px;
+    height: 0px;
     z-index: 2;
   }
 
@@ -532,6 +616,7 @@ article:nth-child(12) {
     border-radius: 10px;
     color: #fff;
   }
+
   #gnb a:hover {
     transform: scale(1.1);
     opacity: 1;
@@ -554,4 +639,8 @@ article:nth-child(12) {
     height: 100%;
     background: #fff;
   }
+}
+
+article:nth-child(1) span {
+  display: none;
 }
