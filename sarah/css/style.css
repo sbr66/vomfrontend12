@@ -59,3 +59,152 @@ section {
 section > img {
   width: 100%;
 }
+
+.sns {
+  position: absolute;
+  top: 60px;
+  right: 30px;
+  opacity: 0.5;
+  font-size: 1.5rem;
+  display: flex;
+}
+
+.sns a {
+  margin-right: 10px;
+}
+
+.logo {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 100px;
+}
+
+.logo img {
+  width: 400px;
+}
+
+/* 1 depth */
+.navi-box {
+  width: 100%;
+  position: absolute;
+  z-index: 200;
+  background: url(../img/tr.png);
+  display: flex;
+  justify-content: center;
+  _padding: 15px;
+}
+
+.navi-box > .navi {
+  width: 100%;
+  max-width: 1280px;
+  color: #fff;
+  display: flex;
+  _justify-content: space-around;
+}
+
+.navi-box > .navi > li {
+  width: 16.66%;
+  margin: auto;
+  position: relative;
+  perspective: 700px;
+}
+
+.navi-box > .navi > li > a {
+  text-align: center;
+  line-height: 4;
+  font-family: orbitron;
+  font-size: 12px;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+  display: block;
+  /* lowercase: 소문자, capitalize: 단어의 첫 글자만 대문자 */
+}
+
+.navi-box > .navi > li:hover > a {
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+/* 2 depth */
+.navi > li > div {
+  position: absolute;
+  width: 100%;
+  height: 300px;
+  left: 0;
+  top: -50px;
+  /* top:-100px; */
+  background: url(../img/tr.png);
+  padding: 10px;
+  transition: all 0.4s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.navi > li:hover > div {
+  opacity: 1;
+  top: -100px;
+  visibility: visible;
+  /* visibility 참조 : https://developer.mozilla.org/ko/docs/Web/CSS/visibility
+  opacity가 0인 경우에도 요소는 존재한다. 따라서 마우스 호버 등의 영향을 받는다. 하지만 visibility를 hidden으로 하면 요소 자체가 없어지는 효과가 난다. */
+  transform: rotateY(360deg);
+}
+
+.navi > li > div > p {
+  width: 100%;
+  height: 90px;
+  overflow: hidden;
+  border: 1px solid #333;
+}
+
+.navi > li > div img {
+  width: 100%;
+  opacity: 0.5;
+}
+
+.navi > li > div > h2 {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  _text-align: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-family: orbitron;
+  color: #fff;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navi > li > div > ul {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.navi > li > div > ul > li {
+  width: 100%;
+
+  height: 37px;
+}
+
+.navi > li > div > ul > li > a {
+  border-top: 1px solid #111;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 11px;
+  color: #888;
+  transition: all 0.4s ease;
+}
+
+.navi > li > div > ul > li > a:hover {
+  background: #000;
+  color: #fff;
+}
