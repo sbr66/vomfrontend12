@@ -52,12 +52,16 @@ section {
   position: absolute;
   z-index: 100;
   overflow: hidden;
-  display: flex;
-  align-items: center;
+  _display: flex;
+  _align-items: center;
 }
 
 section > img {
   width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
 }
 
 .sns {
@@ -79,10 +83,13 @@ section > img {
   display: flex;
   justify-content: center;
   top: 100px;
+  z-index: 1000;
+  position: relative;
 }
 
 .logo img {
   width: 400px;
+  z-index: 1000;
 }
 
 /* 1 depth */
